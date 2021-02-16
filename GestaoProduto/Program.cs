@@ -17,6 +17,21 @@ namespace GestaoProduto
             p.Quantidade = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Dados do produto: " + p);
+
+            Console.WriteLine();
+            Console.Write("Digite o número de produtos a ser adicionado: ");
+            int qte = int.Parse(Console.ReadLine());
+            p.AdicionarProduto(qte);
+
+            Console.WriteLine("Dados do produto: " + p);
+
+            Console.WriteLine();
+            Console.Write("Digite o número de produtos a ser removido: ");
+            qte = int.Parse(Console.ReadLine());
+            p.RemoverProduto(qte);
+
+            Console.WriteLine("Dados do produto: " + p);
+
         }
     }
 }
