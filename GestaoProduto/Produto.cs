@@ -16,10 +16,20 @@ namespace GestaoProduto
             return Preco * Quantidade;
         }
 
+        public void AdicionarProduto(int qte)
+        {
+            Quantidade = Quantidade + qte;
+        }
+
+        public void RemoverProduto(int qte)
+        {
+            Quantidade = Quantidade - qte;
+        }
+
         public override string ToString()
         {
             return $"{Nome}, R${Preco.ToString("F2", CultureInfo.InvariantCulture)}, " +
-                $"{Quantidade} unidades, Total: R$ R${Quantidade.ToString("F2", CultureInfo.InvariantCulture)}";
+                $"{Quantidade} unidades, Total: R$ R${ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture)}";
         }
     }
 }
