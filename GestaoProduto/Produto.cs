@@ -8,21 +8,21 @@ namespace GestaoProduto
     class Produto
     {
         private string _nome;
-        private double _preco;
-        private int _quantidade;
+        public double Preco { get; private set; }
+        public int Quantidade { get; private set; }
 
         public Produto(string nome, double preco, int quantidade)
         {
             _nome = nome;
-            _preco = preco;
-            _quantidade = quantidade;
+            Preco = preco;
+            Quantidade = quantidade;
         }
 
         public Produto(string nome, double preco)
         {
             _nome = nome;
-            _preco = preco;
-            _quantidade = 0;
+            Preco = preco;
+            Quantidade = 0;
         }
 
         public string Nome
@@ -32,40 +32,27 @@ namespace GestaoProduto
             {
                 if (value != null && value.Length > 1) ;
             }
-        }
-
-        public double Preco
-        {
-            get { return _preco; }
-           
-        }
-
-        public int Quantidade
-        {
-            get { return _quantidade; }
-
-        }
-
+        }     
 
         public double ValorTotalEmEstoque()
         {
-            return _preco * _quantidade;
+            return Preco * Quantidade;
         }
 
         public void AdicionarProduto(int qte)
         {
-            _quantidade = _quantidade + qte;
+            Quantidade = Quantidade + qte;
         }
 
         public void RemoverProduto(int qte)
         {
-            _quantidade = _quantidade - qte;
+            Quantidade = Quantidade - qte;
         }
 
         public override string ToString()
         {
-            return $"{Nome}, R${_preco.ToString("F2", CultureInfo.InvariantCulture)}, " +
-                $"{_quantidade} unidades, Total: R$ R${ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture)}";
+            return $"{Nome}, R${Preco.ToString("F2", CultureInfo.InvariantCulture)}, " +
+                $"{Quantidade} unidades, Total: R$ R${ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture)}";
         }
     }
 }
