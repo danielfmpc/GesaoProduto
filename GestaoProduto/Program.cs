@@ -7,6 +7,16 @@ namespace GestaoProduto
     {
         static void Main(string[] args)
         {
+
+            Produto p = new Produto("TV", 900);
+
+            p.Nome = "T";
+
+            Console.WriteLine(p.Nome);
+            Console.WriteLine(p.Preco);
+            Console.WriteLine(p.Quantidade);
+
+            /*
             Console.WriteLine("Entre os dados do produto");
             Console.Write("Nome: ");
             string nome = Console.ReadLine();
@@ -32,6 +42,7 @@ namespace GestaoProduto
             p.RemoverProduto(qte);
 
             Console.WriteLine("Dados do produto: " + p);
+            */
 
         }
     }
